@@ -1,4 +1,4 @@
-package List;
+package list;
 
 import java.util.Objects;
 
@@ -16,25 +16,21 @@ public class List {
     // Should add new value to the end of the list, increment length and extend array by x2 if needed
     public void add(String value) {
         // TODO implement me
-        if (length == values.length) {
-            String[] temp = values;
-            this.values = new String[values.length+1];
-            System.arraycopy(temp,0,values, 0, temp.length);
-        }
+        if (length == values.length) this.values = grow();
         values[length] = value;
         length++;
+    }
+    
+    public String[] grow() {
+        return values = Arrays.copyOf(values, values.length * 2);
     }
 
     // Should add new value at the specified index, moving other values to the right,
     // increment length and extend array by x2 if needed
     public void addAtIndex(String value, int index) {
         // TODO implement me
-        if (length == values.length) {
-            String[] temp = values;
-            this.values = new String[values.length+1];
-            System.arraycopy(temp,0,values, 0, temp.length);
-        }
-        for (int i = values.length-2; i >= index; i--) {
+        if (length == values.length) this.values = grow();
+        for (int i = length - 1; i >= index; i--) {
             values[i+1] = values[i];
         }
         values[index] = value;
@@ -51,12 +47,10 @@ public class List {
     // If the value does not exist - return -1
     public int indexOf(String value) {
         // TODO implement me
-        int index = 0;
-        for (String x : values) {
-            if (Objects.equals(value, x)) {
+        for (int index = 0; index < length; index++) {
+            if (Objects.equals(value, values[index])) {
                 return index;
             }
-            index++;
         }
         return -1;
     }
@@ -64,13 +58,12 @@ public class List {
     // Should remove the value at specified index, decrementing the length of this list and moving next values to the left
     public void remove(int index) {
         // TODO implement me
-        for (int i = index; i < values.length-1; i++) {
-            values[i] = values[i+1];
+        if (index < length) {
+            for (int i = index; i < length; i++) {
+                values[i] = values[i+1];
+            }
+            length--;
         }
-        String[] temp = values;
-        this.values = new String[values.length-1];
-        System.arraycopy(temp,0,values, 0, values.length);
-        length--;
     }
 
     public int getLength() {
