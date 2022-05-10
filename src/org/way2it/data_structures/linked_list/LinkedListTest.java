@@ -3,21 +3,21 @@ package org.way2it.data_structures.linked_list;
 public class LinkedListTest {
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
+       LinkedList<String> linkedList = new LinkedList<>();
 
-        linkedList.add("Audi");
+        linkedList.addToStart("Audi");
 
         System.out.println("Verifications after adding Audi to the list: ");
-        verifyLength(1, linkedList.getLength());
+        verifyLength(1, linkedList.length());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         System.out.println();
 
-        linkedList.add("Toyota");
-        linkedList.add("Volkswagen");
-        linkedList.add("BMW");
+        linkedList.addToStart("Toyota");
+        linkedList.addToStart("Volkswagen");
+        linkedList.addToStart("BMW");
 
         System.out.println("Verifications after adding Toyota, Volkswagen and BMW to the list: ");
-        verifyLength(4, linkedList.getLength());
+        verifyLength(4, linkedList.length());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Volkswagen", true, linkedList.contains("Volkswagen"));
@@ -28,7 +28,7 @@ public class LinkedListTest {
 
         System.out.println("Verifications after adding Mercedes after Toyota: ");
         verifyAdded(true, addedMercedes);
-        verifyLength(5, linkedList.getLength());
+        verifyLength(5, linkedList.length());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Mercedes", true, linkedList.contains("Mercedes"));
@@ -40,7 +40,7 @@ public class LinkedListTest {
 
         System.out.println("Verifications after a try to add Mazda after Honda: ");
         verifyAdded(false, addedMazda);
-        verifyLength(5, linkedList.getLength());
+        verifyLength(5, linkedList.length());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Mercedes", true, linkedList.contains("Mercedes"));
@@ -54,7 +54,7 @@ public class LinkedListTest {
 
         System.out.println("Verifications after a try to remove Mazda: ");
         verifyRemoved(false, removedMazda);
-        verifyLength(5, linkedList.getLength());
+        verifyLength(5, linkedList.length());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Mercedes", true, linkedList.contains("Mercedes"));
@@ -67,7 +67,7 @@ public class LinkedListTest {
 
         System.out.println("Verifications after removing value (Volkswagen) from the middle of the list: ");
         verifyRemoved(true, removedVolkswagen);
-        verifyLength(4, linkedList.getLength());
+        verifyLength(4, linkedList.length());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Mercedes", true, linkedList.contains("Mercedes"));
@@ -79,7 +79,7 @@ public class LinkedListTest {
 
         System.out.println("Verifications after removing value (Audi) from the head of the list: ");
         verifyRemoved(true, removedAudi);
-        verifyLength(3, linkedList.getLength());
+        verifyLength(3, linkedList.length());
         verifyContains("Audi", false, linkedList.contains("Audi"));
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Mercedes", true, linkedList.contains("Mercedes"));
@@ -90,7 +90,7 @@ public class LinkedListTest {
 
         System.out.println("Verifications after removing value (BMW) from the end of the list: ");
         verifyRemoved(true, removedBmw);
-        verifyLength(2, linkedList.getLength());
+        verifyLength(2, linkedList.length());
         verifyContains("Toyota", true, linkedList.contains("Toyota"));
         verifyContains("Mercedes", true, linkedList.contains("Mercedes"));
         verifyContains("BMW", false, linkedList.contains("BMW"));
