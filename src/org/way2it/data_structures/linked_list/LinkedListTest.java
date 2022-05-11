@@ -3,18 +3,18 @@ package org.way2it.data_structures.linked_list;
 public class LinkedListTest {
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
+        LinkedList<String> linkedList = new LinkedList<>();
 
-        linkedList.add("Audi");
+        linkedList.addToStart("Audi");
 
         System.out.println("Verifications after adding Audi to the list: ");
         verifyLength(1, linkedList.getLength());
         verifyContains("Audi", true, linkedList.contains("Audi"));
         System.out.println();
 
-        linkedList.add("Toyota");
-        linkedList.add("Volkswagen");
-        linkedList.add("BMW");
+        linkedList.addToStart("Toyota");
+        linkedList.addToStart("Volkswagen");
+        linkedList.addToStart("BMW");
 
         System.out.println("Verifications after adding Toyota, Volkswagen and BMW to the list: ");
         verifyLength(4, linkedList.getLength());
