@@ -1,5 +1,6 @@
-package list;
+package org.way2it.data_structures.list;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class List {
