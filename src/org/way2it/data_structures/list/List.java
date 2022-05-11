@@ -54,9 +54,9 @@ public class List {
     // Should return a value at specified index, or null if index is out of list bounds
     public String get(int index) {
         // TODO implement me
-        if(index < values.length){
-            return values[index];
-        }
+      if(index < values.length){
+          return values[index];
+      }
         else return null;
     }
 
@@ -67,7 +67,7 @@ public class List {
         int k=-1;
         for(int i = 0; i < values.length;i++){
             if (Objects.equals(values[i], value)){
-                k=i;
+               k=i;
             }
         }
         return k;
