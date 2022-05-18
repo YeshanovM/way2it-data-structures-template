@@ -4,7 +4,7 @@ public class BinaryTreeTest {
 
     public static void main(String[] args) {
         checkSimpleOperations();
-        //checkAlgorithmPerformance();
+        checkAlgorithmPerformance();
         checkRemoving();
     }
 
@@ -39,7 +39,7 @@ public class BinaryTreeTest {
         System.out.println();
     }
 
-/*    private static void checkAlgorithmPerformance() {
+    private static void checkAlgorithmPerformance() {
         System.out.println("Checking performance...");
 
         BinaryTree binaryTree = new BinaryTree();
@@ -62,7 +62,7 @@ public class BinaryTreeTest {
             System.out.println("OK! Your algorithm performs good, elapsed time: " + elapsedSeconds + "s.\n");
         }
     }
-*/
+
     private static void checkRemoving() {
         BinaryTree binaryTree = new BinaryTree();
 
