@@ -1,5 +1,4 @@
 package org.way2it.data_structures.linked_list;
-
 public class LinkedList {
 
     // Represents the first node of this list
